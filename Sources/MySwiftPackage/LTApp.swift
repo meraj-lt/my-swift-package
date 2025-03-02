@@ -16,7 +16,7 @@ public class LTApp {
     public static let ignoreErrors = true
     private let utils: Utils
     
-    init() {
+    public init() {
         self.utils = Utils()
     }
     

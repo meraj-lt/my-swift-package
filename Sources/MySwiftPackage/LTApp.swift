@@ -31,9 +31,9 @@ public class LTApp {
             
             screenshotDetails[Constants.KeyConstants.screenshotName] = name
             screenshotDetails[Constants.KeyConstants.screenshotType] = "lambdatest-espresso-swift"
-            screenshotDetails[Constants.KeyConstants.projectToken] = arguments[Constants.KeyConstants.projectToken]
+            screenshotDetails[Constants.KeyConstants.projectToken] = "2378664#14953880-4adf-4172-885b-d33bdb686807#cli-xcui"//arguments[Constants.KeyConstants.projectToken]
             screenshotDetails[Constants.KeyConstants.buildName] = arguments[Constants.KeyConstants.buildName]
-            screenshotDetails[Constants.KeyConstants.buildId] = arguments[Constants.KeyConstants.buildId]
+            screenshotDetails[Constants.KeyConstants.buildId] = "a2f2f0d4-1006-469e-ae90-2b4cbc657c07" //arguments[Constants.KeyConstants.buildId]
             screenshotDetails[Constants.KeyConstants.deviceName] = arguments[Constants.KeyConstants.deviceName]
             screenshotDetails[Constants.KeyConstants.resolution] = arguments[Constants.KeyConstants.resolution]
             screenshotDetails[Constants.KeyConstants.os] = arguments[Constants.KeyConstants.os]
@@ -43,7 +43,11 @@ public class LTApp {
             screenshotDetails[Constants.KeyConstants.cropStatusBar] = arguments[Constants.KeyConstants.cropStatusBar]
             screenshotDetails[Constants.KeyConstants.customCropStatusBar] = customCropStatusBar
             screenshotDetails[Constants.KeyConstants.customCropNavigationBar] = customCropNavigationBar
-            
+            print("key-valueeeee")
+            for (key, value) in screenshotDetails {
+                
+                print("\(key): \(value)")
+            }
             let visualStr = arguments[Constants.KeyConstants.visual]
             let visual = (visualStr?.lowercased() == "true")
             var response = utils.screenshot(screenshotDetails: &screenshotDetails)
@@ -71,6 +75,7 @@ public class LTApp {
                 fatalError("Error taking screenshot \(name): \(error)")
             }
         }
+        return nil
     }
     
     static func log(_ message: String) {

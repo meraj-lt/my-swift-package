@@ -8,7 +8,7 @@
 import Foundation
 import XCTest
 
-class LTApp {
+public class LTApp {
     
     static let LOGLEVEL = Constants.KeyConstants.info
     private static let DEBUG = (LOGLEVEL == Constants.KeyConstants.debug)
@@ -20,11 +20,11 @@ class LTApp {
         self.utils = Utils()
     }
     
-    @MainActor func screenshot(name: String) -> String? {
+    @MainActor public func screenshot(name: String) -> String? {
         return screenshot(name: name, customCropStatusBar: "", customCropNavigationBar: "")
     }
     
-    @MainActor func screenshot(name: String, customCropStatusBar: String, customCropNavigationBar: String) -> String? {
+    @MainActor public func screenshot(name: String, customCropStatusBar: String, customCropNavigationBar: String) -> String? {
         do {
             var screenshotDetails: [String: String] = [:]
             let arguments = ProcessInfo.processInfo.environment
